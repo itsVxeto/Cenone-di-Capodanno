@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='author' content='Vito Albergo'>
+    <title>Cenone di Capodanno</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./assets/icon.png">
+</head>
+<body class="bg-white">
+    <nav class="bg-gray-100 py-3 px-4 mx-2 rounded-2xl shadow md:flex md:items-center md:justify-between justify-between"> 
+        <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-gray-100 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 
+        opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-5 my-6 md:my-0"><a href="index.html" class="text-xl hover:text-stone-100 duration-500">HOME</a></li>
+            <li class="mx-5 my-6 md:my-0"><a href="flowchart.html" class="text-xl hover:text-stone-100 duration-500">FLOWCHART</a></li>
+            <li class="mx-5 my-6 md:my-0"><a href="python.html" class="text-xl hover:text-stone-100 duration-500">PYTHON</a></li>
+        </ul>
+    </nav>
+    <div class="overflow-hidden flex mt-4">
+        <table class="shadow border-4 border-collapse border-black table-fixed sm:-mx-6 sm:px-6 lg:mx-8 lg:px-8 cursor-pointer">
+            <caption class="text-2xl text-black font-serif">Tabella dei Dati</caption>
+            <thead class="font-bold border">
+                <th class="border-2 border-slate-800 text-gray-900 px-6 py-4 hover:bg-slate-400">Nome</th>
+                <th class="border-2 border-slate-800 text-gray-900 px-6 py-4 hover:bg-slate-400">Tipo</th>
+                <th class="border-2 border-slate-800 text-gray-900 px-6 py-4 hover:bg-slate-400">Uso</th>
+                <th class="border-2 border-slate-800 text-gray-900 px-6 py-4 hover:bg-slate-400">Vincoli</th>
+                <th class="border-2 border-slate-800 text-gray-900 px-6 py-4 hover:bg-slate-400">Note</th>
+            </thead>
+            <tbody class="border border-solid border-slate-800 text-center font-serif bg-gray-100 text-gray-100 text-md whitespace-nowrap">
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>ageA</td>
+                    <td>int</td>
+                    <td>I</td>
+                    <td>>0</td>
+                    <td>età prima persona</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>ageB</td>
+                    <td>int</td>
+                    <td>I</td>
+                    <td>>0</td>
+                    <td>età seconda persona</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>ageC</td>
+                    <td>int</td>
+                    <td>I</td>
+                    <td>>0</td>
+                    <td>età terza persona</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>nChampagne</td>
+                    <td>int</td>
+                    <td>I</td>
+                    <td>>=0</td>
+                    <td>numero di bicchieri di champagne</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>nVegan</td>
+                    <td>int</td>
+                    <td>I</td>
+                    <td>>=0</td>
+                    <td>controlla il numero di persone vegane</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>prezzoChampagne</td>
+                    <td>float</td>
+                    <td>I</td>
+                    <td>>0</td>
+                    <td>prezzo dello champagne</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>prezzoDiscoteca</td>
+                    <td>float</td>
+                    <td>W<br>k=100&euro;</td>
+                    <td>/</td>
+                    <td>prezzo della discoteca</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>babysitting</td>
+                    <td>float</td>
+                    <td>W<br>k=10&euro;</td>
+                    <td>/</td>
+                    <td>prezzo del babysitting</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>piro</td>
+                    <td>float</td>
+                    <td>W<br>k=10&euro;</td>
+                    <td>/</td>
+                    <td>prezzo giochi pirotecnici</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>vegan</td>
+                    <td>float</td>
+                    <td>W<br>k=10&euro;</td>
+                    <td>/</td>
+                    <td>prezzo per i vegani o altro</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>piroTF</td>
+                    <td>str</td>
+                    <td>W</td>
+                    <td>"Si"||"No"</td>
+                    <td>controlla se si vuole accedere ai giochi pirotecnici o meno</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>veganTF</td>
+                    <td>str</td>
+                    <td>W</td>
+                    <td>"Si"||"No"</td>
+                    <td>controlla se ci sono persone vegane tra le persone</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>champagneTF</td>
+                    <td>str</td>
+                    <td>W</td>
+                    <td>"Si"||"No"</td>
+                    <td>controlla se ci sono persone che voglio lo champagne (maggiorenni)</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>costoA</td>
+                    <td>float</td>
+                    <td>W</td>
+                    <td>/</td>
+                    <td>costo di ageA</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>costoB</td>
+                    <td>float</td>
+                    <td>W</td>
+                    <td>/</td>
+                    <td>costo di ageB</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>costoC</td>
+                    <td>float</td>
+                    <td>W</td>
+                    <td>/</td>
+                    <td>costo di ageC</td>
+                </tr>
+                <tr class="hover:bg-slate-400 hover:text-[1.2rem]">
+                    <td>total</td>
+                    <td>float</td>
+                    <td>O</td>
+                    <td>/</td>
+                    <td>totale risultato</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="mb-[70px]">
+        <h2 class="text-2xl font-serif mt-5">Operazioni:</h2>
+        <p>
+            ageA >= 18 &rarr; costoA = costoA + prezzoDiscoteca<br>
+            ageA >= 6 and ageA <= 17 &rarr; costoA = 20<br>
+            costoA = 10 + babysitting
+
+            piroTF == "Si" &rarr; costoA = costoA + piro
+            <hr class="divide-y divide-dashed">
+            ageB >= 18 &rarr; costoB = costoB + prezzoDiscoteca<br>
+            ageB >= 6 and ageB <= 17 &rarr; costoB = 20<br>
+            costoB = 10 + babysitting
+
+            piroTF == "Si" &rarr; costoB = costoB + piro
+            <hr class="divide-y divide-dashed">
+            ageC >= 18 &rarr; costoC = costoC + prezzoDiscoteca<br>
+            ageC >= 6 and ageC <= 17 &rarr; costoC = 20<br>
+            costoC = 10 + babysitting
+
+            piroTF == "Si" &rarr; costoC = costoC + piro
+            <hr class="divide-y divide-dashed">
+            total = costoA + costoB + costoC
+
+            ageA >= 18 || ageB >= 18 || ageC >= 18 &rarr; champagneTF == "Si" &rarr; total = total + (nChampagne * prezzoChampagne)
+            veganTF == "Si" &rarr; total = total (vegan * nVegan)
+        </p>
+    </div>
+    <footer class="fixed bottom-0 w-full bg-gray-100 py-3 px-4 mx-2 my-5 rounded-2xl shadow md:items-center md:justify-between justify-between">
+        Sito Web Creato da Vito Albergo 3<sup>a</sup>A SIA
+    </footer>
+    <style>
+        tr:nth-child(even){
+            background-color: #748398;
+        }
+        tr:nth-child(odd){
+            background-color: #536d91;
+        }
+    </style>
+</body>
+</html>

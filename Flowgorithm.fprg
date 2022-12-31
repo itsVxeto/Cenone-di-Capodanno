@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Utente"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-24 02:26:48 "/>
+        <attribute name="created" value="VXRlbnRlO0RFU0tUT1AtTzVQVFJEMjsyMDIyLTEyLTIxOyIxMTowMTowMyAiOzI4ODE="/>
+        <attribute name="edited" value="VXRlbnRlO0RFU0tUT1AtTzVQVFJEMjsyMDIyLTEyLTI0OyIwMjoyNjo0OCAiOzc7MzAxNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ageA, ageB, ageC, nChampagne, nVegan" type="Integer" array="False" size=""/>
+            <declare name="costoA, costoB, costoC, prezzoDiscoteca, prezzoChampagne, babysitting, piro, vegan, total" type="Real" array="False" size=""/>
+            <declare name="veganTF, piroTF, champagneTF" type="String" array="False" size=""/>
+            <assign variable="prezzoDiscoteca" expression="100"/>
+            <assign variable="babysitting" expression="10"/>
+            <assign variable="piro" expression="10"/>
+            <assign variable="vegan" expression="10"/>
+            <output expression="&quot;Inserisci l'et&#224; della prima persona: &quot;" newline="True"/>
+            <input variable="ageA"/>
+            <output expression="&quot;Inserisci l'et&#224; della seconda persona: &quot;" newline="True"/>
+            <input variable="ageB"/>
+            <output expression="&quot;Inserisci l'et&#224; della terza persona: &quot;" newline="True"/>
+            <input variable="ageC"/>
+            <output expression="&quot;Inserisci il prezzo dello champagne: &quot;" newline="True"/>
+            <input variable="prezzoChampagne"/>
+            <if expression="ageA &gt;= 18">
+                <then>
+                    <assign variable="costoA" expression="30"/>
+                    <assign variable="costoA" expression="costoA + prezzoDiscoteca"/>
+                </then>
+                <else>
+                    <if expression="ageA &gt;= 6 &amp;&amp; ageA &lt;= 17">
+                        <then>
+                            <assign variable="costoA" expression="20"/>
+                        </then>
+                        <else>
+                            <assign variable="costoA" expression="10"/>
+                            <assign variable="costoA" expression="costoA + babysitting"/>
+                            <output expression="&quot;Scrivi Si se la persona vuole usufruire di giochi pirotecnici e No se non vuole&quot;" newline="True"/>
+                            <input variable="piroTF"/>
+                            <if expression="piroTF == &quot;Si&quot;">
+                                <then>
+                                    <assign variable="costoA" expression="costoA + piro"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="ageB &gt;= 18">
+                <then>
+                    <assign variable="costoB" expression="30"/>
+                    <assign variable="costoB" expression="costoB + prezzoDiscoteca"/>
+                </then>
+                <else>
+                    <if expression="ageB &gt;= 6 &amp;&amp; ageB &lt;= 17">
+                        <then>
+                            <assign variable="costoB" expression="20"/>
+                        </then>
+                        <else>
+                            <assign variable="costoB" expression="10"/>
+                            <assign variable="costoB" expression="costoB + babysitting"/>
+                            <output expression="&quot;Scrivi Si se la persona vuole usufruire di giochi pirotecnici e No se non vuole&quot;" newline="True"/>
+                            <input variable="piroTF"/>
+                            <if expression="piroTF == &quot;Si&quot;">
+                                <then>
+                                    <assign variable="costoB" expression="costoB + piro"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="ageC &gt;= 18">
+                <then>
+                    <assign variable="costoC" expression="30"/>
+                    <assign variable="costoC" expression="costoC + prezzoDiscoteca"/>
+                </then>
+                <else>
+                    <if expression="ageC &gt;= 6 &amp;&amp; ageC &lt;= 17">
+                        <then>
+                            <assign variable="costoC" expression="20"/>
+                        </then>
+                        <else>
+                            <assign variable="costoC" expression="10"/>
+                            <assign variable="costoC" expression="costoC + babysitting"/>
+                            <output expression="&quot;Scrivi Si se la persona vuole usufruire di giochi pirotecnici e No se non vuole&quot;" newline="True"/>
+                            <input variable="piroTF"/>
+                            <if expression="piroTF == &quot;Si&quot;">
+                                <then>
+                                    <assign variable="costoC" expression="costoC + piro"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="costoA + costoB + costoC"/>
+            <output expression="&quot;C'&#232; almeno una persona che vuole lo champagne?: &quot;" newline="True"/>
+            <input variable="champagneTF"/>
+            <if expression="ageA &gt;= 18 || ageB &gt;= 18 || ageC &gt;= 18">
+                <then>
+                    <if expression="champagneTF == &quot;Si&quot;">
+                        <then>
+                            <output expression="&quot;Inserisci il numero di bicchieri: &quot;" newline="True"/>
+                            <input variable="nChampagne"/>
+                            <assign variable="total" expression="total + (nChampagne * prezzoChampagne)"/>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;C'&#232; almeno una persona vegana?: &quot;" newline="True"/>
+            <input variable="veganTF"/>
+            <if expression="veganTF == &quot;Si&quot;">
+                <then>
+                    <output expression="&quot;Inserisci il numero di persone vegane: &quot;" newline="True"/>
+                    <input variable="nVegan"/>
+                    <assign variable="total" expression="total + (vegan * nVegan)"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='author' content='Vito Albergo'>
+    <title>Cenone di Capodanno</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./assets/icon.png">
+</head>
+<body class="bg-white">
+    <nav class="bg-gray-100 py-3 px-4 mx-2 rounded-2xl shadow md:flex md:items-center md:justify-between justify-between"> 
+        <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-gray-100 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 
+        opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-5 my-6 md:my-0"><a href="index.html" class="text-xl hover:text-stone-100 duration-500">HOME</a></li>
+            <li class="mx-5 my-6 md:my-0"><a href="flowchart.html" class="text-xl hover:text-stone-100 duration-500">FLOWCHART</a></li>
+            <li class="mx-5 my-6 md:my-0"><a href="python.html" class="text-xl hover:text-stone-100 duration-500">PYTHON</a></li>
+        </ul>
+    </nav>
+    <div>
+        <h2 class="text-2xl font-serif mt-5">Codice Python:</h2>
+        <div>
+            <button type="button" id="btnID1" class="bg-slate-300 text-xl rounded-md" onclick="Python()">>Clicca per mostrare il codice python</button>
+            <img class="mt-3" src="./assets/Cenone di Capodanno.png" id="imgCode" alt="codice python" width="727px" height="auto">
+        </div>
+        <div>
+            <button type="button" id="btnID2" class="mb-[70px] bg-slate-300 text-xl rounded-md" onclick="PythonGUI()">>Clicca per mostrare il codice python con GUI (tkinter)</button>
+            <img class="mt-3 mb-[74px]" src="./assets/Cenone di Capodanno GUI.png" id="imgCodeGUI" alt="codice python con GUI" width="727px" height="auto">
+        </div>
+    </div>
+    <footer class="fixed bottom-0 w-full bg-gray-100 py-3 px-4 mx-2 mb-5 rounded-2xl shadow md:items-center md:justify-between justify-between">
+        Sito Web Creato da Vito Albergo 3<sup>a</sup>A SIA
+    </footer>
+    <script>
+        // richiamo
+        const button2 = document.getElementById('btnID1');
+        const image2 = document.getElementById('imgCode');
+
+        // funzione per far apparire o scomparire
+        function Python() {
+            if (image2.classList.contains('hidden')) {
+                image2.classList.remove('hidden');
+            } else {
+                image2.classList.add('hidden');
+            }
+        }
+
+        button2.addEventListener('click', Python());
+
+        // richiamo
+        const button3 = document.getElementById('btnID2');
+        const image3 = document.getElementById('imgCodeGUI');
+
+        // funzione per far apparire o scomparire
+        function PythonGUI() {
+            if (image3.classList.contains('hidden')) {
+                image3.classList.remove('hidden');
+            } else {
+                image3.classList.add('hidden');
+            }
+        }
+
+        button3.addEventListener('click', PythonGUI());
+    </script>
+</body>
+</html>

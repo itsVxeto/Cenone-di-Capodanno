@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='author' content='Vito Albergo'>
+    <title>Cenone di Capodanno</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./assets/icon.png">
+</head>
+<body class="bg-white">
+    <nav class="bg-gray-100 py-3 px-4 mx-2 rounded-2xl shadow md:flex md:items-center md:justify-between justify-between"> 
+        <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-gray-100 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 
+        opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-5 my-6 md:my-0"><a href="index.html" class="text-xl hover:text-stone-100 duration-500">HOME</a></li>
+            <li class="mx-5 my-6 md:my-0"><a href="flowchart.html" class="text-xl hover:text-stone-100 duration-500">FLOWCHART</a></li>
+            <li class="mx-5 my-6 md:my-0"><a href="python.html" class="text-xl hover:text-stone-100 duration-500">PYTHON</a></li>
+        </ul>
+    </nav>
+    <h2 class="text-2xl font-serif mt-5">Flowchart:</h2>
+    <button type="button" id="btnID" class="bg-slate-300 text-xl rounded-md" onclick="Flowchart()">>Clicca per mostrare il Flowgorithm</button>
+    <div class="p-7 mb-[30px]">
+        <img class="pb-6" src="./assets/Flowgorithm - Main.png" id="imgFlow" alt="Immagine Flowgorithm" width="850px" height="auto">
+    </div>
+    <footer class="fixed bottom-0 w-full bg-gray-100 py-3 px-4 mx-2 my-5 rounded-2xl shadow md:items-center md:justify-between justify-between">
+        Sito Web Creato da Vito Albergo 3<sup>a</sup>A SIA
+    </footer>
+    <script>
+        // richiamiamo
+        const button = document.getElementById('btnID');
+        const image = document.getElementById('imgFlow');
+
+        // funzione per far apparire o scomparire
+        function Flowchart() {
+            if (image.classList.contains('hidden')) {
+                image.classList.remove('hidden');
+            } else {
+                image.classList.add('hidden');
+            }
+        }
+
+        // bottone da cliccare
+        button.addEventListener('click', Flowchart());
+    </script>
+</body>
+</html>
