@@ -4,9 +4,9 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="Utente"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2022-12-24 02:26:48 "/>
+        <attribute name="saved" value="2023-01-09 07:46:39 "/>
         <attribute name="created" value="VXRlbnRlO0RFU0tUT1AtTzVQVFJEMjsyMDIyLTEyLTIxOyIxMTowMTowMyAiOzI4ODE="/>
-        <attribute name="edited" value="VXRlbnRlO0RFU0tUT1AtTzVQVFJEMjsyMDIyLTEyLTI0OyIwMjoyNjo0OCAiOzc7MzAxNA=="/>
+        <attribute name="edited" value="VXRlbnRlO0RFU0tUT1AtTzVQVFJEMjsyMDIzLTAxLTA5OyIwNzo0NjozOSAiOzk7MzAyNQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -115,7 +115,9 @@
                         <else/>
                     </if>
                 </then>
-                <else/>
+                <else>
+                    <output expression="&quot;Non puoi avere lo champagne!&quot;" newline="True"/>
+                </else>
             </if>
             <output expression="&quot;C'&#232; almeno una persona vegana?: &quot;" newline="True"/>
             <input variable="veganTF"/>
@@ -127,7 +129,7 @@
                 </then>
                 <else/>
             </if>
-            <output expression="total" newline="True"/>
+            <output expression="&quot;Il totale &#232;: &#8364;&quot;&amp;total" newline="True"/>
         </body>
     </function>
 </flowgorithm>

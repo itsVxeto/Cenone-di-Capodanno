@@ -1,172 +1,129 @@
 import tkinter as tk
 
 def calculate_total():
-    ageA = int(age_entry_a.get())
-    ageB = int(age_entry_b.get())
-    ageC = int(age_entry_c.get())
-    prezzoChampagne = float(champagne_price_entry.get())
-
+    #dichiarazione variabili
+    ageA = int(entryAgeA.get())
+    ageB = int(entryAgeB.get())
+    ageC = int(entryAgeC.get())
+    prezzoChampagne = float(entryPriceChampagne.get())
+    piroTF = str(entryPiro.get().lower())
+    champagneTF = str(entryChampagne.get().lower())
+    veganTF = str(entryVegan.get().lower())
     costoA = 0
     costoB = 0
     costoC = 0
-
     prezzoDiscoteca = 100
     babysitting = 10
     piro = 10
     vegan = 10
 
-    # prima persona
+    #calcolo prima persona
     if ageA >= 18:
         costoA += 30 + prezzoDiscoteca
     elif ageA >= 6 and ageA <= 17:
         costoA += 20
     else:
         costoA += 10 + babysitting
-
-        # nascondi etichetta e entry per i giochi pirotecnici
-        # pyro_label_a.pack_forget()
-        # pyro_entry_a.pack_forget()
-
-        if ageA < 6:
-
-            # mostra etichetta e entry per i giochi pirotecnici
-            pyro_label_a.pack()
-            pyro_entry_a.pack()
-
-            if pyro_entry_a.get().lower() == 'Si':
-                costoA += piro
-
-    # seconda persona
+        if piroTF == 'Si':
+            costoA += piro
+            
+    #calcolo seconda persona
     if ageB >= 18:
         costoB += 30 + prezzoDiscoteca
     elif ageB >= 6 and ageB <= 17:
         costoB += 20
     else:
         costoB += 10 + babysitting
+        if piroTF == 'Si':
+            costoB += piro
 
-        # nascondi etichetta e entry per i giochi pirotecnici
-        # pyro_label_b.pack_forget()
-        # pyro_entry_b.pack_forget()
-
-        if ageB < 6:
-            # mostra etichetta e entry per i giochi pirotecnici
-            pyro_label_b.pack()
-            pyro_entry_b.pack()
-
-            if pyro_entry_b.get().lower() == 'Si':
-                costoB += piro
-
-    # terza persona
+    #calcolo terza persona
     if ageC >= 18:
         costoC += 30 + prezzoDiscoteca
     elif ageC >= 6 and ageC <= 17:
         costoC += 20
     else:
         costoC += 10 + babysitting
+        if piroTF == 'Si':
+            costoC += piro
 
-        # nascondi etichetta e entry per i giochi pirotecnici
-        # pyro_label_c.pack_forget()
-        # pyro_entry_c.pack_forget()
-
-        if ageC < 6:
-            # mostra etichetta e entry per i giochi pirotecnici
-            pyro_label_c.pack()
-            pyro_entry_c.pack()
-
-            if pyro_entry_c.get().lower() == 'Si':
-                costoC += piro
-
+    #calcolo totale
     total = costoA + costoB + costoC
 
+    #calcolo champagne
     if ageA >= 18 or ageB >= 18 or ageC >= 18:
-        champagne_var = tk.IntVar()
-        if champagne_var.get() == 1:
-            nChampagne = int(champagne_qty_entry.get())
-            total = total + (nChampagne * prezzoChampagne)
+        if champagneTF == 'Si':
+          nChampagne = int(entryNumeroBicchieri.get())
+          total += nChampagne * prezzoChampagne
 
-    vegan_var = tk.IntVar()
-    if vegan_var.get() == 1:
-        nVegan = int(vegan_qty_entry.get())
-        total = total + (vegan * nVegan)
+    #calcolo vegani
+    if veganTF == 'Si':
+        nVegan = int(entryNumeroVegani.get())
+        total += nVegan * vegan
 
-    total_label['text'] = 'Il totale è: {}'.format(total)
+    labelTotal['text'] = f"Il totale è: {total}"
 
-# creazione finestra
+#finestra
 root = tk.Tk()
 root.title('Cenone di capodanno')
-root.geometry("1000x727+460+140")
+root.geometry('1000x727+460+140')
 root.iconbitmap('./assets/icon.ico')
 root.resizable(False, False)
 
-# età prima persona
-age_label_a = tk.Label(root, text='Inserisci l\'età della prima persona:')
-age_label_a.pack()
+#label e entry
+labelAgeA = tk.Label(root, text="Inserisci l\'età della prima persona:")
+labelAgeA.pack()
+entryAgeA = tk.Entry(root)
+entryAgeA.pack()
 
-age_entry_a = tk.Entry(root)
-age_entry_a.pack()
+labelAgeB = tk.Label(root, text="Inserisci l\'età della seconda persona:")
+labelAgeB.pack()
+entryAgeB = tk.Entry(root)
+entryAgeB.pack()
 
-# giochi pirotecnici prima persona
-pyro_label_a = tk.Label(root, text='Giochi pirotecnici prima persona (Si/No):')
-pyro_label_a.pack()
+labelAgeC = tk.Label(root, text="Inserisci l\'età della terza persona:")
+labelAgeC.pack()
+entryAgeC = tk.Entry(root)
+entryAgeC.pack()
 
-pyro_entry_a = tk.Entry(root)
-pyro_entry_a.pack()
+#verifica champagne, giochi piro e vegani
+labelPriceChampagne = tk.Label(root, text="Inserisci il prezzo dello champagne:")
+labelPriceChampagne.pack()
+entryPriceChampagne = tk.Entry(root)
+entryPriceChampagne.pack()
 
-#età seconda persona
-age_label_b = tk.Label(root, text='Inserisci l\'età della seconda persona:')
-age_label_b.pack()
+labelNumeroBicchieri = tk.Label(root, text="Inserisci il numero di bicchieri di champagne:")
+labelNumeroBicchieri.pack()
+entryNumeroBicchieri = tk.Entry(root)
+entryNumeroBicchieri.pack()
 
-age_entry_b = tk.Entry(root)
-age_entry_b.pack()
+labelPiro = tk.Label(root, text="Scrivi \"Si\" se la persona vuole usufruire di giochi pirotecnici e \"No\" se non vuole:")
+labelPiro.pack()
+entryPiro = tk.Entry(root)
+entryPiro.pack()
 
-#giochi pirotecnici seconda persona
-pyro_label_b = tk.Label(root, text='Giochi pirotecnici seconda persona (Si/No):')
-pyro_label_b.pack()
+labelChampagne = tk.Label(root, text="C\'è almeno una persona che vuole lo champagne?:")
+labelChampagne.pack()
+entryChampagne = tk.Entry(root)
+entryChampagne.pack()
 
-pyro_entry_b = tk.Entry(root)
-pyro_entry_b.pack()
+labelVegan = tk.Label(root, text="C\'è almeno una persona vegana?:")
+labelVegan.pack()
+entryVegan = tk.Entry(root)
+entryVegan.pack()
 
-# età terza persona
-age_label_c = tk.Label(root, text='Inserisci l\'età della terza persona:')
-age_label_c.pack()
+labelNumeroVegani = tk.Label(root, text="Inserisci il numero di persone vegane:")
+labelNumeroVegani.pack()
+entryNumeroVegani = tk.Entry(root)
+entryNumeroVegani.pack()
 
-age_entry_c = tk.Entry(root)
-age_entry_c.pack()
+#bottone del totale
+labelBottone = tk.Label(root, text="Clicca per ottenere il totale!")
+labelBottone.pack()
+buttonBottone = tk.Button(root, text="Clicca!", command=calculate_total)
+buttonBottone.pack()
 
-# giochi pirotecnici terza persona
-pyro_label_c = tk.Label(root, text='Giochi pirotecnici terza persona (Si/No):')
-pyro_label_c.pack()
-
-pyro_entry_c = tk.Entry(root)
-pyro_entry_c.pack()
-
-# prezzo champagne
-champagne_price_label = tk.Label(root, text='Inserisci il prezzo dello champagne')
-champagne_price_label.pack()
-
-champagne_price_entry = tk.Entry(root)
-champagne_price_entry.pack()
-
-# quantità champagne
-champagne_qty_label = tk.Label(root, text='Quantità champagne:')
-champagne_qty_label.pack()
-
-champagne_qty_entry = tk.Entry(root)
-champagne_qty_entry.pack()
-
-# quantità persone vegane
-vegan_qty_label = tk.Label(root, text='Quantità persone vegane:')
-vegan_qty_label.pack()
-
-vegan_qty_entry = tk.Entry(root)
-vegan_qty_entry.pack()
-
-# pulsante per calcolare il totale
-calculate_button = tk.Button(root, text='Calcola totale', command=calculate_total)
-calculate_button.pack()
-
-# etichetta per mostrare il totale
-total_label = tk.Label(root, text='')
-total_label.pack()
-
+#stampa del totale
+labelTotal = tk.Label(root, text="")
+labelTotal.pack()
 root.mainloop()

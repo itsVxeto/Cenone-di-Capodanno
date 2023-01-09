@@ -10,6 +10,10 @@
     <link rel="icon" href="./assets/icon.png">
 </head>
 <body class="bg-white">
+    <div class="alert ml-[20rem] p-5 mb-4 bg-red-500 text-white">
+        <span class="closebtn hover:to-black ml-4 text-white transition float-right cursor-pointer font-bold text-xl">&times</span>
+        Attenzione, il codice python con il modulo tkinter presenta dei problemi
+    </div>
     <nav class="bg-gray-100 py-3 px-4 mx-2 rounded-2xl shadow md:flex md:items-center md:justify-between justify-between"> 
         <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-gray-100 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 
         opacity-0 top-[-400px] transition-all ease-in duration-500">
@@ -62,6 +66,18 @@
         }
 
         button3.addEventListener('click', PythonGUI());
+
+        //btn
+        const close = document.getElementsByClassName('closebtn');
+        var i;
+
+        for (i = 0; i<close.length;i++) {
+            close[i].onclick = function(){
+                var div = this.parentElement;
+                div.style.opacity = '0';
+                setTimeout(function(){ div.style.display = 'none';}, 600);
+            }
+        }
     </script>
 </body>
 </html>
